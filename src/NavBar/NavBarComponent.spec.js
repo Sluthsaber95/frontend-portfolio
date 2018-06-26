@@ -4,15 +4,6 @@ import sinon from 'sinon'
 import NavBarComponent from './index'
 import '../enzyme-setup'
 
-/*
-Test Updates
-- More specific error messages for props
-Feature Updates
-- Passing both icons/texts/customised buttons
-Bug Fixes
-
-*/
-
 const context = describe
 describe('NavBarComponent', () => {
   beforeEach(() => {
