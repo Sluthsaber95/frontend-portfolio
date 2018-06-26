@@ -5,7 +5,8 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
-import NavBar from '../NavBar/index'
+import NavBar from '../NavBar'
+import NavColumn from '../NavColumn'
 import LightBulbLogo from '../NavBar/light-bulb-thin.svg'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
@@ -29,3 +30,5 @@ storiesOf('NavBar', module)
       options= {navOptions}
     />
   )
+storiesOf('NavColumn', module)
+  .add('with options (Default)', () => <NavColumn />)
