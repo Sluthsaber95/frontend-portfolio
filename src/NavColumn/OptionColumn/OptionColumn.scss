@@ -1,0 +1,21 @@
+@import '../../../styles/scss/index.scss';
+
+span, img {
+  margin: 0;
+  padding: 0;
+}
+
+@media(max-width: $desktop-l-width){
+  .col-option {
+    .main-option {
+      font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      margin: 20px 0 0 0;
+    }
+  }
+}
+@media(max-width: $desktop-m-width){}
+@media(max-width: $desktop-s-width){}
+@media(max-width: $tablet-width){}
+@media(max-width: $mobile-width){
+
+}

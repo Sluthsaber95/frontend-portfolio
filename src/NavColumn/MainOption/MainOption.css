@@ -317,11 +317,13 @@ span, img {
   padding: 0; }
 
 @media (max-width: 1823px) {
-  .col-option-container {
-    width: 297px;
-    height: 100vh;
-    background: #F7F7F7;
-    overflow-y: scroll; }
-  .col-option-container .col-option-wrapper {
-    padding: 30px 0 100px 30px;
-    overflow-y: scroll; } }
+  .main-option-inline {
+    margin: 0px; }
+  .main-option-inline h4 {
+    display: inline;
+    font-weight: 400;
+    margin: 0px; }
+  .main-option-inline h4:hover {
+    text-decoration: underline; }
+  .route-picked {
+    color: #288BAA; } }

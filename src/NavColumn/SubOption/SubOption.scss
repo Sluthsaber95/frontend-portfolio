@@ -1,0 +1,33 @@
+@import '../../../styles/scss/index.scss';
+
+span, img {
+  margin: 0;
+  padding: 0;
+}
+
+@media(max-width: $desktop-l-width){
+  .sub-option {
+    padding: 0 0 0 20px;
+    color: $black;
+    opacity: 0.5;
+  }
+  .sub-option {
+    h4 {
+      display: block;
+      font-weight: 400;
+      padding: 0 0 0 10px;
+      margin: 20px 0 0 0;
+    }
+    h4:hover {
+      text-decoration: underline;
+    }
+  }
+  .route-picked {
+    opacity: 1;
+    color: $primary-color;
+  }
+}
+@media(max-width: $desktop-m-width){}
+@media(max-width: $desktop-s-width){}
+@media(max-width: $tablet-width){}
+@media(max-width: $mobile-width){}

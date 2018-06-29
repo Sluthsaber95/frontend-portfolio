@@ -1,7 +1,27 @@
 @import '../../styles/scss/index.scss';
 
-@media(max-width: $desktop-l-width){}
+span, img {
+  margin: 0;
+  padding: 0;
+}
+
+@media(max-width: $desktop-l-width){
+  .col-option-container {
+    width: 297px;
+    height: 100vh;
+    background: $grey;
+    overflow-y: scroll;
+  }
+  .col-option-container {
+    .col-option-wrapper {
+      padding: 30px 0 100px 30px;
+      overflow-y: scroll;
+    }
+  }
+}
 @media(max-width: $desktop-m-width){}
 @media(max-width: $desktop-s-width){}
 @media(max-width: $tablet-width){}
-@media(max-width: $mobile-width){}
+@media(max-width: $mobile-width){
+
+}

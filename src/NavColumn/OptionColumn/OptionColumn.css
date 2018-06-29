@@ -317,11 +317,6 @@ span, img {
   padding: 0; }
 
 @media (max-width: 1823px) {
-  .col-option-container {
-    width: 297px;
-    height: 100vh;
-    background: #F7F7F7;
-    overflow-y: scroll; }
-  .col-option-container .col-option-wrapper {
-    padding: 30px 0 100px 30px;
-    overflow-y: scroll; } }
+  .col-option .main-option {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    margin: 20px 0 0 0; } }
