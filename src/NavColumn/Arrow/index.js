@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
 import ArrowDownIcon from './arrow-down.svg'
 import ArrowLeftIcon from './arrow-left.svg'
 import './Arrow.css'
@@ -22,3 +23,14 @@ const Arrow = (props) => {
 }
 
 export default Arrow
+
+Arrow.defaultProps = {
+  picked: false
+}
+
+Arrow.propType = {
+  displaySubColumn: PropTypes.func.isRequired,
+  picked: PropTypes.bool.isRequired
+}
+
+Arrow.Default
