@@ -8,7 +8,7 @@ import { Button, Welcome } from '@storybook/react/demo';
 import NavBar from '../NavBar'
 import NavColumn from '../NavColumn'
 import OptionColumn from '../NavColumn/OptionColumn'
-import LightBulbLogo from '../NavBar/light-bulb-thin.svg'
+import ReactIcon from '../../public/react-icon.svg'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -16,24 +16,28 @@ storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
   .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
 
-const navOptions = [
-  { name: 'Docs', active: true },
-  { name: 'Releases', active: false },
-  { name: 'Guides', active: false },
-  { name: 'How To', active: false },
-]
 storiesOf('NavBar', module)
-  .add('with logo',() => <NavBar options={[]} />)
+  .add('with logo and no options',() => <NavBar options={[]} />)
   .add('with logo and text (Default)', () => <NavBar />)
-  .add('with logo and text (Customized)', () =>
-    <NavBar 
-      logo={LightBulbLogo}
-      options= {navOptions}
-    />
+  .add('with logo and text (Both Customized)', () => {
+    const navOptions = [
+      { name: 'Docs', active: true },
+      { name: 'Releases', active: false },
+      { name: 'Guides', active: false },
+      { name: 'How To', active: false },
+    ]
+    return (
+      <NavBar 
+        logo={ReactIcon}
+        options= {navOptions}
+      />
+    )
+  }
   )
 storiesOf('NavColumn', module)
+
   .add('with no options (Default)', () => <NavColumn />)
-  .add('with a single main option, including multiple sub options', () =>
+  .add('with a single main option', () =>
     <NavColumn>
       <OptionColumn
         option='Introduction'
@@ -41,7 +45,7 @@ storiesOf('NavColumn', module)
         />
     </NavColumn>
   )
-  .add('with multiple main options, including multiple sub options', () =>
+  .add('with multiple main options', () =>
     <NavColumn>
       <OptionColumn
         option='Introduction'
