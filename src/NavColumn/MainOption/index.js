@@ -1,8 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Arrow from '../Arrow'
 import "./MainOption.css"
-
-const OPTION_TITLE = 'OPTION_TITLE'
 
 const MainOption = (props) => {
   const handleClickTitle = () => {
@@ -10,7 +9,6 @@ const MainOption = (props) => {
       parentOption: props.option,
       optionIndex: props.option
     }
-    props.displaySubColumn(OPTION_TITLE)
     props.activateRoute(routeUpdated)
   }
   const className = props.option === props.routePicked.optionIndex
@@ -21,8 +19,6 @@ const MainOption = (props) => {
       <Arrow 
         displaySubColumn={props.displaySubColumn} 
         picked={props.picked}
-        option={props.option}
-        routePicked={props.routePicked}
       />
       <h4 onClick={() => handleClickTitle()} >{props.option}</h4>
     </div>
@@ -30,3 +26,26 @@ const MainOption = (props) => {
 }
 
 export default MainOption
+
+MainOption.propTypes = {
+  displaySubColumn: PropTypes.func,
+  option: PropTypes.oneOfType([
+    PropTypes.string,
+  ]),
+  picked: PropTypes.bool,
+  routePicked: PropTypes.exact({
+    parentOption: PropTypes.string,
+    optionIndex: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ])
+  })
+}
+
+MainOption.defaultProps = {
+  option: 'Main Option',
+  routePicked: {
+    parentOption: null,
+    optionIndex: null
+  },
+}
