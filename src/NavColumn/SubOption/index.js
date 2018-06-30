@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import "./SubOption.css"
 
 const SubOption = (props) => {
@@ -19,3 +20,27 @@ const SubOption = (props) => {
 }
 
 export default SubOption
+
+SubOption.propTypes = {
+  activateRoute: PropTypes.func,
+  index: PropTypes.number.isRequired,
+  option: PropTypes.string,
+  parentOption: PropTypes.string,
+  routePicked: PropTypes.exact({
+    parentOption: PropTypes.string,
+    optionIndex: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]),
+  })
+}
+
+SubOption.defaultProps = {
+  index: NaN,
+  option: 'Main Option',
+  parentOption: 'Main Option',
+  routePicked: {
+    parentOption: null,
+    optionIndex: null
+  },
+}
