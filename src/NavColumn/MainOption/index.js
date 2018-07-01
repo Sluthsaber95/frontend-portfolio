@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import Arrow from '../Arrow'
 import "./MainOption.css"
 
+const OPTION_TITLE = 'OPTION_TITLE'
+
 const MainOption = (props) => {
   const handleClickTitle = () => {
     const routeUpdated = {
@@ -10,6 +12,7 @@ const MainOption = (props) => {
       optionIndex: props.option
     }
     props.activateRoute(routeUpdated)
+    props.displaySubColumn(OPTION_TITLE)
   }
   const className = props.option === props.routePicked.optionIndex
     ? "main-option-inline route-picked"
