@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import OptionColumn from './OptionColumn/index'
+import PropTypes from 'prop-types'
 import "./index.css"
 
 class NavColumn extends Component {
@@ -14,12 +15,11 @@ class NavColumn extends Component {
     this.activateRoute = this.activateRoute.bind(this)
   }
   activateRoute(routePicked) {
-    this.setState({ 
-      routePicked
-    })
+    this.setState({ routePicked })
   }
   render(){
-    const ChildrenColumn = React.Children.map(this.props.children, (child) => {
+    const { children } = this.props
+    const ChildrenColumn = React.Children.map(children, (child) => {
       return React.cloneElement(child,
         {
           ...this.props,
@@ -39,3 +39,10 @@ class NavColumn extends Component {
 }
 
 export default NavColumn
+
+NavColumn.propTypes = {
+   option: PropTypes.string,
+   subOption: PropTypes.arrayOf([
+     PropTypes.string.isRequired
+   ])
+}
