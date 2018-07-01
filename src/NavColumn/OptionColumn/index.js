@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import shortid from 'shortid'
 import MainOption from '../MainOption'
 import SubOption from '../SubOption'
@@ -35,7 +36,7 @@ class OptionColumn extends Component {
           routePicked={this.props.routePicked}
           parentOption={this.props.option}
           activateRoute={this.props.activateRoute}
-          index={index} 
+          index={index}
           key={keyId} 
           option={option} 
         />
@@ -62,3 +63,25 @@ class OptionColumn extends Component {
 }
 
 export default OptionColumn
+
+OptionColumn.propTypes = {
+  option: PropTypes.string.isRequired,
+  routePicked: PropTypes.exact({
+    parentOption: PropTypes.string,
+    optionIndex: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]),
+  }),
+  subOption: PropTypes.arrayOf(PropTypes.string),
+}
+
+OptionColumn.defaultProps = {
+  option: 'Main Option',
+  routePicked: {
+    parentOption: null,
+    optionIndex: null
+  },
+  subOption: ['ES6 Classes', 'ES7 Exponents', 'ES8 Async Await'],
+
+}
