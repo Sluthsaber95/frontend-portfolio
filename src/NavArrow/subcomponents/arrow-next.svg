@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="47px" viewBox="0 0 49 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/arrow-next</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon/arrow-next" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/arrow-prev" transform="translate(24.500000, 23.500000) rotate(180.000000) translate(-24.500000, -23.500000) ">
+            <g id="Group-4" transform="translate(-1.000000, 0.000000)">
+                <path d="M6.82842712,21.5 L50.5,21.5 L50.5,25.5 L7.82842712,25.5 L27.0814755,44.7530483 L24.2530483,47.5814755 L0.918524548,24.2469517 L1.16547622,24 L-0.081475452,22.7530483 L23.2530483,-0.581475452 L26.0814755,2.24695167 L6.82842712,21.5 Z" id="Combined-Shape" stroke="#282C35" fill="#282C35" opacity="0.3" stroke-linejoin="round"></path>
+                <g id="Group-3"></g>
+            </g>
+        </g>
+    </g>
+</svg>

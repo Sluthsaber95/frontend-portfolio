@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="47px" viewBox="0 0 49 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/arrow-next-active</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon/arrow-next-active" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4" transform="translate(24.500000, 23.500000) rotate(180.000000) translate(-24.500000, -23.500000) ">
+            <path d="M6.32842712,21.5 L49.5,21.5 L49.5,25.5 L7.32842712,25.5 L26.4558441,44.627417 L23.627417,47.4558441 L0.292893219,24.1213203 L0.414213562,24 L-0.707106781,22.8786797 L22.627417,-0.455844123 L25.4558441,2.372583 L6.32842712,21.5 Z" id="Combined-Shape" stroke="#288BAA" fill="#288BAA" stroke-linejoin="round"></path>
+            <g id="Group-3"></g>
+        </g>
+    </g>
+</svg>
