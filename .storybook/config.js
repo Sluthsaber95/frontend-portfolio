@@ -1,7 +1,13 @@
-import { configure } from '@storybook/react';
+import { configure } from '@storybook/react'
+import { configureActions } from '@storybook/addon-actions'
 
-function loadStories() {
-  require('../src/stories');
+
+const loadStories = () => {
+  require('../src/stories')
 }
 
-configure(loadStories, module);
+configure(loadStories, module)
+configureActions({
+  depth: 100,
+  limit: 20,
+})
