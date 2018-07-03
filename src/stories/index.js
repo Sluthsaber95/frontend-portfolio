@@ -1,20 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { actions } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { Button, Welcome } from '@storybook/react/demo';
+import NavArrow from '../NavArrow'
 import NavBar from '../NavBar'
 import NavColumn from '../NavColumn'
 import OptionColumn from '../NavColumn/OptionColumn'
 import ReactIcon from '../../public/react-icon.svg'
-
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
-
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
 
 storiesOf('NavBar', module)
   .add('with logo and no options',() => <NavBar options={[]} />)
@@ -37,7 +31,7 @@ storiesOf('NavBar', module)
 storiesOf('NavColumn', module)
 
   .add('with no options (Default)', () => <NavColumn />)
-  .add('with a single main option', () =>
+  .add('with a singleCardUsed main option', () =>
     <NavColumn>
       <OptionColumn
         option='Introduction'
@@ -60,4 +54,56 @@ storiesOf('NavColumn', module)
         subOption={['Async Actions', 'Async Flow', 'Middle', 'Usage', 'Example: Reddit API', 'Next Steps']}
       />
     </NavColumn>
+  )
+
+const styles = {
+  padding: '100px 0 0 0',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+};
+const navArrowContainer = {
+  height: `$80px`,
+  display: 'flex',
+  justifyContent: 'center'
+}
+const NavArrowDecorator = (storyFn) => (
+  <div style={styles}>
+    {storyFn()}
+  </div>
+)
+
+
+storiesOf('NavArrow', module)
+  .addDecorator(NavArrowDecorator)
+  .add('plain card with no decoration (Default)', () => 
+    <NavArrow />
+  )
+  .add('single card denoting next destination', () =>
+    <NavArrow
+      next={true}
+      title='Core Concepts'
+      singleCardUsed={true}
+    />
+  )
+  .add('single card denoting previous destination', () =>
+    <NavArrow
+      next={false}
+      title='Basics'
+      singleCardUsed={true}
+    />
+  )
+  .add('double cards denoting both previous and next destinations', () => 
+  <div style={navArrowContainer}>
+    <NavArrow
+      next={false}
+      title='Basics'
+      singleCardUsed={false}
+    />
+    <NavArrow
+      next={true}
+      title='Core Concepts'
+      singleCardUsed={false}
+    />
+  </div>
   )
