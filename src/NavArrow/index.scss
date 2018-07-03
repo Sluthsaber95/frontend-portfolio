@@ -1,0 +1,92 @@
+@import '../../styles/scss/index.scss';
+
+@media(max-width: $desktop-l-width){
+  .margin-bottom {
+    margin-bottom: 24px;
+  }
+  .margin-left {
+    margin-left: 24px;
+  }
+  %nav-arrow_template {
+    height: 78px;
+    min-width: 200px;
+    width: 30vw;
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    display: flex;
+    align-items: center;
+  }
+  %nav-arrow_template {
+    %nav-wrapper_template {
+      padding: 16px;
+      height: 43px;
+      width: 106px;
+    }
+    %nav-wrapper_template {
+      .nav-destination {
+        font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        margin: 0 0 4px 0;
+      }
+      .nav-title {
+        font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+    .nav-next-wrapper {
+      @extend %nav-wrapper_template;
+    }
+    .nav-prev-wrapper {
+      position: absolute;
+      right: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .nav-prev-wrapper {
+      @extend %nav-wrapper_template;
+    }
+    %arrow-img_template {
+      width: 15px;
+      position: absolute;
+    }
+    .arrow-img-next {
+      @extend %arrow-img_template;
+      right: 0;
+      padding: 0 16px 0 0;
+    }
+    .arrow-img-prev {
+      @extend %arrow-img_template;
+      left: 0;
+      padding: 0 0 0 16px;
+    }
+  }
+  .nav-arrow {
+    border: 1px solid $dark-slate-gray-30;
+  }
+  .nav-arrow {
+    @extend %nav-arrow_template;
+    .nav-title {
+      color: $dark-slate-gray;
+    }
+  }
+  .nav-arrow:hover {
+    border: 1px solid $primary-color;
+  }
+  .nav-arrow:hover {
+    @extend %nav-arrow_template;
+    .nav-title {
+      color: $primary-color;
+    }
+  }
+}
+@media(max-width: $desktop-m-width){}
+@media(max-width: $desktop-s-width){}
+@media(max-width: $tablet-width){
+  .margin-left {
+    margin-left: 0;
+  }
+}
+@media(max-width: $mobile-width){}
