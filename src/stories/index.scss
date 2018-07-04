@@ -1,0 +1,25 @@
+@import '../../styles/scss/index.scss';
+
+@media(max-width: $desktop-l-width){
+  .nav-arrow-height {
+    height: 80px;
+  }
+  .centralise-component {
+   padding: 100px 0 0 0;
+   display: flex;
+   justify-content: center;
+  }
+  .nav-arrow-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+}
+@media(max-width: $desktop-m-width){}
+@media(max-width: $desktop-s-width){}
+@media(max-width: $tablet-width){
+  .nav-arrow-container {
+   display: block;
+  }
+}
+@media(max-width: $mobile-width){}
