@@ -9,6 +9,7 @@ import NavBar from '../NavBar'
 import NavColumn from '../NavColumn'
 import OptionColumn from '../NavColumn/OptionColumn'
 import ReactIcon from '../../public/react-icon.svg'
+import './index.css'
 
 storiesOf('NavBar', module)
   .add('with logo and no options',() => <NavBar options={[]} />)
@@ -56,20 +57,11 @@ storiesOf('NavColumn', module)
     </NavColumn>
   )
 
-const styles = {
-  padding: '100px 0 0 0',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-};
-const navArrowContainer = {
-  height: `$80px`,
-  display: 'flex',
-  justifyContent: 'center'
-}
 const NavArrowDecorator = (storyFn) => (
-  <div style={styles}>
-    {storyFn()}
+  <div className="nav-arrow-height centralise-component">
+    <div className="nav-arrow-container">
+      {storyFn()}
+    </div>
   </div>
 )
 
@@ -94,16 +86,16 @@ storiesOf('NavArrow', module)
     />
   )
   .add('double cards denoting both previous and next destinations', () => 
-  <div style={navArrowContainer}>
-    <NavArrow
-      next={false}
-      title='Basics'
-      singleCardUsed={false}
-    />
-    <NavArrow
-      next={true}
-      title='Core Concepts'
-      singleCardUsed={false}
-    />
-  </div>
+    <Fragment>
+      <NavArrow
+        next={false}
+        title='Basics'
+        singleCardUsed={false}
+      />
+      <NavArrow
+        next={true}
+        title='Core Concepts'
+        singleCardUsed={false}
+      />
+    </Fragment>
   )
