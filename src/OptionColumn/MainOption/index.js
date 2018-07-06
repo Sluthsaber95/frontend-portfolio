@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Arrow from '../Arrow'
 import "./MainOption.css"
@@ -19,11 +20,13 @@ const MainOption = (props) => {
     : "main-option-inline"
   return (
     <div className={className}>
-      <Arrow 
-        displaySubColumn={props.displaySubColumn} 
-        picked={props.picked}
-      />
-      <h4 onClick={() => handleClickTitle()} >{props.option}</h4>
+        <Arrow 
+          displaySubColumn={props.displaySubColumn} 
+          picked={props.picked}
+        />
+      <Link to={`/${props.option}`}>
+        <h4 onClick={() => handleClickTitle()} >{props.option}</h4>
+      </Link>
     </div>
   )
 }

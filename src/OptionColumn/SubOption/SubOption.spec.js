@@ -1,21 +1,25 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 import SubOptionComponent from './index'
 import '../../enzyme-setup'
-import SubOption from './index';
 
 const context = describe
 
 describe('SubOption', () => {
   it('renders', () => {
-    const SubOption = shallow(<SubOptionComponent />)
+    const SubOption = mount(<SubOptionComponent />)
     expect(SubOption.exists()).toBe(true)
   })
   it('renders with <h4> and inner text', () => {
     const SubOption = mount(<SubOptionComponent />)
     const Introduction = 'Introduction'
-
-    SubOption.setProps({ option: Introduction })
+    const option = {
+      name: "Introduction",
+      path: "",
+      exact: true,
+      main: () => <div />
+    }
+    SubOption.setProps({ option })
     const h4 = SubOption.find('h4').html()
     expect(h4).toEqual("<h4>Introduction</h4>")
   })
@@ -33,22 +37,23 @@ describe('SubOption', () => {
     const index = props.index
     expect(isNaN(index)).toBe(true)
   })
-  it('should have default prop "option" set to a string value', () => {
+  it('should have default prop "option" set to a object value', () => {
     const SubOption = mount(<SubOptionComponent />)
-    const props = SubOption.props()
-    const option = props.option
-    expect(typeof option).toBe('string')
+    const option = SubOption.props().option
+
+    expect(typeof option).toBe('object')
   })
   it('should have default prop "parentOption" set to a string value', () => {
     const SubOption = mount(<SubOptionComponent />)
     const props = SubOption.props()
     const parentOption = props.parentOption
+
     expect(typeof parentOption).toBe('string')
   })
   it('should have default prop "routePicked" with keys "parentOption", "optionIndex"', () => {
     const SubOption = mount(<SubOptionComponent />)
-    const props = SubOption.props()
-    const routePicked = props.routePicked
+    const routePicked = SubOption.props().routePicked
+
     expect(routePicked).toHaveProperty('parentOption', null)
     expect(routePicked).toHaveProperty('optionIndex', null)
   })
@@ -63,26 +68,15 @@ describe('SubOption', () => {
     const indexValueSet = SubOption.props().index
     expect(indexValueSet).toBe(1)
   })
-  it('should handle props option', () => {
-    const SubOption = mount(<SubOptionComponent />)
-
-    SubOption.setProps({ option: 'Tutorial' })
-    const optionValueDefault = SubOption.props().option
-    expect(optionValueDefault).toBe('Tutorial')
-
-    SubOption.setProps({ option: 'Introduction' })
-    const optionValueSet = SubOption.props().option
-    expect(optionValueSet).toBe('Introduction')
-  })
-  it('should handle props option and set the h4 title', () => {
+  it('should handle props option and set the h4 name', () => {
     const SubOption = mount(<SubOptionComponent />)
     const Tutorial = 'Tutorial'
     const Introduction = 'Introduction'
 
-    SubOption.setProps({ option: Tutorial })
+    SubOption.setProps({ option: { name: Tutorial } })
     expect(SubOption.find('h4').html()).toBe(`<h4>${Tutorial}</h4>`)
 
-    SubOption.setProps({ option: Introduction })
+    SubOption.setProps({ option: { name: Introduction } })
     expect(SubOption.find('h4').html()).toBe(`<h4>${Introduction}</h4>`)
   })
   it('should handle props parentOption', () => {

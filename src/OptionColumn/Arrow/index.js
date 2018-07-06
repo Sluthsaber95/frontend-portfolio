@@ -10,8 +10,8 @@ const Arrow = (props) => {
   const handleClickArrow = () => {
     props.displaySubColumn(OPTION_ARROW)
   }
-  const ArrowDown = <img className="icon-arrow" src={ArrowDownIcon} onClick={handleClickArrow} />
-  const ArrowLeft = <img className="icon-arrow" src={ArrowLeftIcon} onClick={handleClickArrow} />
+  const ArrowDown = <img className="icon-arrow" src={ArrowDownIcon} onClick={handleClickArrow} alt="Main Menu Option Open"/>
+  const ArrowLeft = <img className="icon-arrow" src={ArrowLeftIcon} onClick={handleClickArrow} alt="Main Menu Option Closed"/>
   const ArrowOrientation = props.picked
     ? ArrowDown
     : ArrowLeft
@@ -32,5 +32,3 @@ Arrow.propType = {
   displaySubColumn: PropTypes.func.isRequired,
   picked: PropTypes.bool.isRequired
 }
-
-Arrow.Default
