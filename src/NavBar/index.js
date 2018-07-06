@@ -14,7 +14,6 @@ class NavBar extends Component {
   }
   handleClick(index){
     const options = this.state.options;
-    // not possible to use the previous state entirely
     const nextOptions = options.map((option, i) => {
       return i === index
       ? Object.assign({}, option, { active: true })
@@ -32,7 +31,7 @@ class NavBar extends Component {
     return (
       <section className="nav-container">
         <nav className="nav-bar-left">
-          <img className="logo-size" src={this.props.logo} />
+          <img className="logo-size" src={this.props.logo} alt="logo"/>
           <h1 className="logo-name">{this.props.logoName}</h1>
         </nav>
         <nav className="nav-bar-right">
