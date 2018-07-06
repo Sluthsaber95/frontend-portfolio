@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import { storiesOf } from '@storybook/react';
 import { actions } from '@storybook/addon-actions';
@@ -7,8 +8,8 @@ import { linkTo } from '@storybook/addon-links';
 import NavArrow from '../NavArrow'
 import NavBar from '../NavBar'
 import NavColumn from '../NavColumn'
-import OptionColumn from '../NavColumn/OptionColumn'
-import ReactIcon from '../../public/react-icon.svg'
+import OptionColumn from '../OptionColumn'
+import ReactIcon from './react-icon.svg'
 import './index.css'
 
 storiesOf('NavBar', module)
@@ -29,32 +30,62 @@ storiesOf('NavBar', module)
     )
   }
   )
-storiesOf('NavColumn', module)
 
+const multipleOptions = [
+  {
+    name: "",
+    path: "/",
+    exact: true,
+    main: () => <Introduction />
+  },
+  {
+    name: "Core Concepts",
+    path: "/core-concepts",
+    exact: true,
+    main: () => <CoreConcepts />
+  },
+  {
+    name: "Motivation",
+    path: "/motivation",
+    exact: true,
+    main: () => <Motivation />
+  },
+  {
+    name: "Introduction",
+    path: "/introduction",
+    exact: true,
+    main: () => <Introduction />
+  },
+];
+storiesOf('NavColumn', module)
   .add('with no options (Default)', () => <NavColumn />)
   .add('with a singleCardUsed main option', () =>
-    <NavColumn>
-      <OptionColumn
-        option='Introduction'
-        subOption={['Motivation', 'Core Concepts', 'Three Principles', 'Prior Art', 'Learning Resources', 'Ecosystem', 'Examples']}
-        />
-    </NavColumn>
+    <Router>
+      <NavColumn>
+        <OptionColumn
+          option='Introduction'
+          subOption={multipleOptions}
+          />
+      </NavColumn>
+    </Router>
   )
   .add('with multiple main options', () =>
-    <NavColumn>
-      <OptionColumn
-        option='Introduction'
-        subOption={['Motivation', 'Core Concepts', 'Three Principles', 'Prior Art', 'Learning Resources', 'Ecosystem', 'Examples']}
-      />
-      <OptionColumn
-        option='Basics'
-        subOption={['Actions', 'Reducers', 'Store', 'Data Flow', 'Usage with React', 'Example: TodoList']}
-      />
-      <OptionColumn
-        option='Advanced'
-        subOption={['Async Actions', 'Async Flow', 'Middle', 'Usage', 'Example: Reddit API', 'Next Steps']}
-      />
-    </NavColumn>
+    <Router>
+      <NavColumn>
+        <OptionColumn
+          option='Introduction'
+          subOption={multipleOptions}
+        />
+        <OptionColumn
+          option='Basics'
+          subOption={multipleOptions}
+        />
+        <OptionColumn
+          option='Advanced'
+          subOption={multipleOptions}
+        />
+      </NavColumn>
+    </Router>
   )
 
 const NavArrowDecorator = (storyFn) => (
