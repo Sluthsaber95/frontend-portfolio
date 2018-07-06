@@ -1,6 +1,8 @@
 # Inventory
 Inventory is React component library for creating library documentation, that can be published in the form of static sites
 
+React v16.3
+
 ##  Installation
 npm i inventory-js
 
