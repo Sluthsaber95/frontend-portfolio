@@ -1,0 +1,10 @@
+# npm
+.npmignore
+
+# UI and Styling Tools
+*.scss
+/.storybook
+/stories
+
+# create-react-app
+/public
