@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import OptionColumn from './OptionColumn/index'
 import PropTypes from 'prop-types'
 import "./index.css"
 
@@ -31,7 +30,7 @@ class NavColumn extends Component {
     return (
       <section className="col-option-container">
         <article className="col-option-wrapper">
-        { ChildrenColumn }
+          { ChildrenColumn }
         </article>
       </section>
     )

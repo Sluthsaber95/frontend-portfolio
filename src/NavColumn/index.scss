@@ -11,6 +11,7 @@ span, img {
     height: 100vh;
     background: $grey;
     overflow-y: scroll;
+    z-index: -1;
   }
   .col-option-container {
     .col-option-wrapper {
